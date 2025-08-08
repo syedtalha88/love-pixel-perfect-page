@@ -55,7 +55,7 @@ const Index = () => {
           <div className="bg-background/60">
             <div className="container mx-auto py-20 md:py-28 text-center">
               <h2 className="font-display text-5xl md:text-7xl text-foreground">
-                Muhammad & Amatullah
+                Talha & Ariba
               </h2>
               <p className="mt-4 text-lg md:text-xl text-muted-foreground">
                 We Are Getting Married Nov 15, 2022
