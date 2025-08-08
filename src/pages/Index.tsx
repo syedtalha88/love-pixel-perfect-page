@@ -1,38 +1,26 @@
-import { Facebook, Twitter, Linkedin, Instagram, Search, ShoppingCart } from "lucide-react";
+import { Heart } from "lucide-react";
 import heroBg from "@/assets/hero-floral-bg.jpg";
 import groom from "@/assets/groom-portrait.jpg";
 import bride from "@/assets/bride-portrait.jpg";
 import bouquet from "@/assets/bouquet.jpg";
 
 const Nav = () => (
-  <header className="sticky top-0 z-40 bg-card/90 backdrop-blur border-b">
-    <div className="container mx-auto hidden md:flex items-center justify-between py-3">
-      <div className="flex items-center gap-4 text-accent-foreground/80">
-        <a aria-label="Facebook" href="#" className="hover:text-foreground transition-colors"><Facebook size={16} /></a>
-        <a aria-label="Twitter" href="#" className="hover:text-foreground transition-colors"><Twitter size={16} /></a>
-        <a aria-label="LinkedIn" href="#" className="hover:text-foreground transition-colors"><Linkedin size={16} /></a>
-        <a aria-label="Instagram" href="#" className="hover:text-foreground transition-colors"><Instagram size={16} /></a>
-      </div>
-      <nav className="flex items-center gap-8 text-sm uppercase tracking-wide text-muted-foreground">
-        <a href="#home" className="hover:text-foreground transition-colors">Home</a>
-        <a href="#pages" className="hover:text-foreground transition-colors">Pages</a>
-        <a href="#portfolio" className="hover:text-foreground transition-colors">Portfolio</a>
-        <span className="font-display text-2xl text-accent-foreground">Love Love</span>
-        <a href="#blog" className="hover:text-foreground transition-colors">Blog</a>
-        <a href="#shop" className="hover:text-foreground transition-colors">Shop</a>
-        <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
-      </nav>
-      <div className="flex items-center gap-4 text-accent-foreground/80">
-        <button aria-label="Search" className="hover:text-foreground transition-colors"><Search size={18} /></button>
-        <button aria-label="Cart" className="hover:text-foreground transition-colors relative">
-          <ShoppingCart size={18} />
-          <span className="absolute -top-2 -right-2 text-xs bg-accent text-accent-foreground rounded-full w-5 h-5 grid place-items-center">2</span>
-        </button>
+  <header className="sticky top-0 z-40 border-b bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30">
+    <div className="container mx-auto hidden md:flex items-center justify-center py-3">
+      <div className="flex items-center gap-4 text-muted-foreground">
+        <Heart size={16} className="opacity-70" />
+        <span className="h-px w-16 bg-foreground/20 rounded-full" />
+        <span className="font-display text-3xl text-accent-foreground">Marriage Ceremony</span>
+        <span className="h-px w-16 bg-foreground/20 rounded-full" />
+        <Heart size={16} className="opacity-70" />
       </div>
     </div>
-    {/* Mobile simplified nav */}
     <div className="md:hidden container mx-auto py-3 flex items-center justify-center">
-      <span className="font-display text-3xl text-accent-foreground">Love Love</span>
+      <div className="flex items-center gap-3 text-muted-foreground">
+        <Heart size={14} className="opacity-70" />
+        <span className="font-display text-3xl text-accent-foreground">Marriage Ceremony</span>
+        <Heart size={14} className="opacity-70" />
+      </div>
     </div>
   </header>
 );
