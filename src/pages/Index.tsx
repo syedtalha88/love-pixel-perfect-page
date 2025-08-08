@@ -66,7 +66,7 @@ const Index = () => {
 
         <section className="container mx-auto -mt-16 md:-mt-24 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <Framed src={groom} alt="Groom portrait in blush shirt" />
+            <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png" alt="Groom portrait in cream sherwani with turban" />
             <Framed src={bouquet} alt="White roses and blush buds bouquet" />
             <Framed src={bride} alt="Bride portrait in beige hijab" />
           </div>
