@@ -1,8 +1,8 @@
 import { Heart } from "lucide-react";
 import heroBg from "@/assets/hero-floral-bg.jpg";
 import groom from "@/assets/groom-portrait.jpg";
-import bride from "@/assets/bride-portrait.jpg";
 import bouquet from "@/assets/bouquet.jpg";
+import prayerMat from "@/assets/prayer-mat-ariba.jpg";
 
 const Nav = () => (
   <header className="sticky top-0 z-40 border-b bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30">
@@ -68,7 +68,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png" alt="Groom portrait in cream sherwani with turban" />
             <Framed src={bouquet} alt="White roses and blush buds bouquet" />
-            <Framed src={bride} alt="Bride portrait in beige hijab" />
+            <Framed src={prayerMat} alt="Beautiful prayer mat with 'Ariba' written on it and flowers" />
           </div>
         </section>
 
