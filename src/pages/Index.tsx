@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 import heroBg from "@/assets/hero-floral-bg.jpg";
-import groom from "@/assets/groom-portrait.jpg";
 import bouquet from "@/assets/bouquet.jpg";
 import prayerMat from "@/assets/prayer-mat-ariba.jpg";
 
@@ -35,6 +35,72 @@ const Framed = ({ src, alt }: { src: string; alt: string }) => (
     />
   </figure>
 );
+
+const NamesSection = () => (
+  <section className="container mx-auto py-16 md:py-24" aria-labelledby="names-title">
+    <h2 id="names-title" className="sr-only">Bride and Groom</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-center">
+      <article className="space-y-3">
+        <h3 className="font-display text-3xl text-foreground">Talha</h3>
+        <p className="text-muted-foreground max-w-md mx-auto">
+          We are delighted to celebrate our union with family and friends.
+        </p>
+      </article>
+      <div className="hidden md:flex items-center justify-center">
+        <Heart className="text-foreground/20" size={56} />
+      </div>
+      <article className="space-y-3">
+        <h3 className="font-display text-3xl text-foreground">Ariba</h3>
+        <p className="text-muted-foreground max-w-md mx-auto">
+          Join us as we begin this beautiful journey together.
+        </p>
+      </article>
+    </div>
+  </section>
+);
+
+const Countdown = ({ daysFromNow = 36 }: { daysFromNow?: number }) => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const target = Date.now() + daysFromNow * 86_400_000; // ms in a day
+    const tick = () => {
+      const delta = Math.max(0, target - Date.now());
+      const days = Math.floor(delta / 86_400_000);
+      const hours = Math.floor((delta % 86_400_000) / 3_600_000);
+      const minutes = Math.floor((delta % 3_600_000) / 60_000);
+      const seconds = Math.floor((delta % 60_000) / 1_000);
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    return () => clearInterval(timer);
+  }, [daysFromNow]);
+
+  return (
+    <section className="container mx-auto py-12 md:py-20" aria-labelledby="countdown-title">
+      <h2 id="countdown-title" className="sr-only">Wedding Countdown</h2>
+      <div className="grid grid-cols-4 max-w-xl mx-auto gap-6 text-center">
+        <div className="space-y-1">
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.days}</div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">Days</div>
+        </div>
+        <div className="space-y-1">
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.hours}</div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">Hours</div>
+        </div>
+        <div className="space-y-1">
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.minutes}</div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">Mins</div>
+        </div>
+        <div className="space-y-1">
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.seconds}</div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">Secs</div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Index = () => {
   return (
@@ -72,8 +138,11 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Spacer to balance the hero overlap */}
-        <section className="py-16 md:py-24" />
+        {/* Names Section */}
+        <NamesSection />
+
+        {/* Countdown Section - 36 days from now */}
+        <Countdown daysFromNow={36} />
       </main>
     </>
   );
