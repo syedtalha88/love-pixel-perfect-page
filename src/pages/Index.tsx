@@ -103,6 +103,72 @@ const Countdown = ({ daysFromNow = 36 }: { daysFromNow?: number }) => {
   );
 };
 
+const NikahSection = () => {
+  return (
+    <section className="container mx-auto py-16 md:py-24" aria-labelledby="nikah-title">
+      <div className="text-center mb-8 md:mb-10">
+        <h2 id="nikah-title" className="font-amiri text-4xl md:text-5xl text-accent-foreground tracking-wide">
+          Nikah
+        </h2>
+        <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto italic">
+          "And He placed between you affection and mercy." — Surah Ar-Rum 30:21
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-3 text-accent-foreground/70">
+          <span className="h-px w-16 bg-accent/50" />
+          <span className="w-2 h-2 rounded-full bg-accent/70" />
+          <span className="h-px w-16 bg-accent/50" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="animate-fade-in">
+          <div className="p-3 bg-card border rounded-lg shadow-lg">
+            <div className="overflow-hidden rounded-t-[120px] border border-accent/30 shadow-md">
+              <img src={heroBg} alt="Nikah venue" loading="lazy" className="w-full h-80 object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <article className="animate-fade-in">
+          <div className="bg-background/70 backdrop-blur-sm border rounded-lg p-6 md:p-8 shadow-md">
+            <h3 className="sr-only">Nikah Details</h3>
+            <dl className="space-y-4">
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground">Venue</dt>
+                <dd className="text-foreground font-medium">[Venue name], [Location]</dd>
+              </div>
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground">Date & Time</dt>
+                <dd className="text-foreground font-medium">[Date], [Time]</dd>
+              </div>
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground">About the Ceremony</dt>
+                <dd className="text-muted-foreground">
+                  A brief description of the Nikah ceremony and customs observed. You can include details
+                  about the khutbah, proposal and acceptance (ijab and qabul), and the signing of the Nikah
+                  contract.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground">Family Traditions</dt>
+                <dd className="text-muted-foreground">
+                  Any special family traditions or notes you would like guests to know.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-12 flex items-center gap-4 text-accent-foreground/70">
+        <span className="h-px w-full bg-accent/40" />
+        <span className="w-3 h-3 rounded-full border border-accent/70" />
+        <span className="h-px w-full bg-accent/40" />
+      </div>
+    </section>
+  );
+};
+
 const Index = () => {
   return (
     <>
@@ -153,6 +219,9 @@ const Index = () => {
 
         {/* Countdown Section - 36 days from now */}
         <Countdown daysFromNow={36} />
+
+        {/* Nikah Section */}
+        <NikahSection />
       </main>
     </>
   );
