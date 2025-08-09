@@ -24,10 +24,11 @@ const EndingSection = () => {
           <h2 id="ending-title" className="sr-only">Closing Blessing</h2>
 
           <p className="mt-6 font-amiri text-3xl md:text-5xl text-accent-foreground tracking-wide animate-fade-in">
-            Barakallahu lakuma wa baraka ‘alaykuma wa jama‘a baynakuma fee khayr
+            Barak Allahu laka wa baraka alaik, wa jama‘a baynakuma fee khayr
           </p>
           <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto animate-fade-in">
-            “And He placed between you affection and mercy.” — Surah Ar-Rum 30:21
+            “May Allah bless this union with love, mercy, and tranquility, and make it a source of
+                  goodness in this life and the next.”
           </p>
         </div>
       </div>

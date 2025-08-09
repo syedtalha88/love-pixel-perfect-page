@@ -1,8 +1,10 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Heart } from "lucide-react";
 import heroBg from "@/assets/hero-floral-bg.jpg";
+import Haji from "@/assets/HajiAli.jpg";
+import Masjid from "@/assets/jama_masjid.png";
 import bouquet from "@/assets/bouquet.jpg";
-import prayerMat from "@/assets/prayer-mat-ariba.jpg";
+import prayerMat from "@/assets/mat2.png";
 import HadithSection from "@/sections/HadithSection";
 import DuaSection from "@/sections/DuaSection";
 import MapSection from "@/sections/MapSection";
@@ -63,12 +65,18 @@ const NamesSection = () => (
     </div>
   </section>
 );
-
-const Countdown = ({ daysFromNow = 36 }: { daysFromNow?: number }) => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+ 
+const Countdown = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
-    const target = Date.now() + daysFromNow * 86_400_000; // ms in a day
+    const target = new Date("2025-09-15T00:00:00").getTime(); // Fixed wedding date
+
     const tick = () => {
       const delta = Math.max(0, target - Date.now());
       const days = Math.floor(delta / 86_400_000);
@@ -77,40 +85,66 @@ const Countdown = ({ daysFromNow = 36 }: { daysFromNow?: number }) => {
       const seconds = Math.floor((delta % 60_000) / 1_000);
       setTimeLeft({ days, hours, minutes, seconds });
     };
+
     tick();
     const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
-  }, [daysFromNow]);
+  }, []);
 
   return (
-    <section className="container mx-auto py-12 md:py-20" aria-labelledby="countdown-title">
-      <h2 id="countdown-title" className="sr-only">Wedding Countdown</h2>
+    <section
+      className="container mx-auto py-12 md:py-20"
+      aria-labelledby="countdown-title"
+    >
+      <h2 id="countdown-title" className="sr-only">
+        Wedding Countdown
+      </h2>
       <div className="grid grid-cols-4 max-w-xl mx-auto gap-6 text-center">
         <div className="space-y-1">
-          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.days}</div>
-          <div className="text-sm uppercase tracking-wide text-muted-foreground">Days</div>
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">
+            {timeLeft.days}
+          </div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">
+            Days
+          </div>
         </div>
         <div className="space-y-1">
-          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.hours}</div>
-          <div className="text-sm uppercase tracking-wide text-muted-foreground">Hours</div>
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">
+            {timeLeft.hours}
+          </div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">
+            Hours
+          </div>
         </div>
         <div className="space-y-1">
-          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.minutes}</div>
-          <div className="text-sm uppercase tracking-wide text-muted-foreground">Mins</div>
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">
+            {timeLeft.minutes}
+          </div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">
+            Mins
+          </div>
         </div>
         <div className="space-y-1">
-          <div className="font-display text-4xl md:text-5xl text-accent-foreground">{timeLeft.seconds}</div>
-          <div className="text-sm uppercase tracking-wide text-muted-foreground">Secs</div>
+          <div className="font-display text-4xl md:text-5xl text-accent-foreground">
+            {timeLeft.seconds}
+          </div>
+          <div className="text-sm uppercase tracking-wide text-muted-foreground">
+            Secs
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
+
 const NikahSection = () => {
   return (
-    <section className="container mx-auto py-16 md:py-24" aria-labelledby="nikah-title">
+    <section className="container mx-auto pb-16 md:pb-24" aria-labelledby="nikah-title">
       <div className="text-center mb-8 md:mb-10">
+        <h2 id="nikah-title" className="font-amiri pb-12 text-4xl md:text-5xl text-accent-foreground tracking-wide">
+          Insha Allah
+        </h2>
         <h2 id="nikah-title" className="font-amiri text-4xl md:text-5xl text-accent-foreground tracking-wide">
           Nikah
         </h2>
@@ -128,7 +162,7 @@ const NikahSection = () => {
         <div className="animate-fade-in">
           <div className="p-3 bg-card border rounded-lg shadow-lg">
             <div className="overflow-hidden rounded-t-[120px] border border-accent/30 shadow-md">
-              <img src={heroBg} alt="Nikah venue" loading="lazy" className="w-full h-80 object-cover" />
+              <img src={Masjid} alt="Nikah venue" loading="lazy" className="w-full h-80 object-cover" />
             </div>
           </div>
         </div>
@@ -139,26 +173,19 @@ const NikahSection = () => {
             <dl className="space-y-4">
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground">Venue</dt>
-                <dd className="text-foreground font-medium">[Venue name], [Location]</dd>
+                <dd className="text-foreground font-medium">Jama Masjid, Aurangabad</dd>
               </div>
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground">Date & Time</dt>
                 <dd className="text-foreground font-medium">[Date], [Time]</dd>
               </div>
               <div>
-                <dt className="text-sm uppercase tracking-wide text-muted-foreground">About the Ceremony</dt>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground"></dt>
                 <dd className="text-muted-foreground">
-                  A brief description of the Nikah ceremony and customs observed. You can include details
-                  about the khutbah, proposal and acceptance (ijab and qabul), and the signing of the Nikah
-                  contract.
+                 In shaa Allah, our Nikah will  take place at the historic Jama Masjid, Aurangabad — a blessed house of Allah, filled with barakah and the fragrance of faith.
                 </dd>
               </div>
-              <div>
-                <dt className="text-sm uppercase tracking-wide text-muted-foreground">Family Traditions</dt>
-                <dd className="text-muted-foreground">
-                  Any special family traditions or notes you would like guests to know.
-                </dd>
-              </div>
+              
             </dl>
           </div>
         </article>
@@ -172,6 +199,70 @@ const NikahSection = () => {
     </section>
   );
 };
+
+
+const WalimaSection = () => {
+  return (
+    <section className="container mx-auto pb-16 md:pb-24" aria-labelledby="nikah-title">
+      <div className="text-center mb-8 md:mb-10">
+        <h2 id="nikah-title" className="font-amiri pb-12 text-4xl md:text-5xl text-accent-foreground tracking-wide">
+          Insha Allah
+        </h2>
+        <h2 id="nikah-title" className="font-amiri text-4xl md:text-5xl text-accent-foreground tracking-wide">
+          Walima
+        </h2>
+        <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto italic">
+          "O Believers, Eat from the good things We have provided for you and be grateful to Allah." — Surah Al-Baqarah 2:172
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-3 text-accent-foreground/70">
+          <span className="h-px w-16 bg-accent/50" />
+          <span className="w-2 h-2 rounded-full bg-accent/70" />
+          <span className="h-px w-16 bg-accent/50" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="animate-fade-in">
+          <div className="p-3 bg-card border rounded-lg shadow-lg">
+            <div className="overflow-hidden rounded-t-[120px] border border-accent/30 shadow-md">
+              <img src={Haji} alt="Nikah venue" loading="lazy" className="w-full h-80 object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <article className="animate-fade-in">
+          <div className="bg-background/70 backdrop-blur-sm border rounded-lg p-6 md:p-8 shadow-md">
+            <h3 className="sr-only">Walima Details</h3>
+            <dl className="space-y-4">
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground">Venue</dt>
+                <dd className="text-foreground font-medium">Haji Ali Function Hall, Aurangabad</dd>
+              </div>
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground">Date & Time</dt>
+                <dd className="text-foreground font-medium">[Date], [Time]</dd>
+              </div>
+              <div>
+                <dt className="text-sm uppercase tracking-wide text-muted-foreground"></dt>
+                <dd className="text-muted-foreground">
+                 "In shaa Allah, our Walima will be held at Haji Ali Function Hall — a beautiful Sunnah of our beloved Prophet ﷺ, gathering family and friends in joy, gratitude, and the blessings of Allah."
+                </dd>
+              </div>
+              
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-12 flex items-center gap-4 text-accent-foreground/70">
+        <span className="h-px w-full bg-accent/40" />
+        <span className="w-3 h-3 rounded-full border border-accent/70" />
+        <span className="h-px w-full bg-accent/40" />
+      </div>
+    </section>
+  );
+};
+
 
 const Index = () => {
   return (
@@ -190,43 +281,49 @@ const Index = () => {
           }}
         >
           <div className="bg-background/60">
-            <div className="container mx-auto py-20 md:py-28 text-center">
+            <div className="container mx-auto pt-10 pb-20 md:pb-28 text-center">
+              
+              <h2 className="font-display text-5xl md:text-7xl text-foreground">Bismillah</h2>
+              <p className="text-lg pb-20 md:text-xl text-foreground">In the name of Allah, the most beneficent and merciful.</p>
+              <br />
               <h2 className="font-display text-5xl md:text-7xl text-foreground">
                 Talha & Ariba
               </h2>
               <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-                We Are Getting Married Nov 15, 2022
+                We Are Getting Married On SEP 15, 2025
               </p>
             </div>
           </div>
         </section>
 
-        <section className="container mx-auto -mt-16 md:-mt-24 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png" alt="Groom portrait in cream sherwani with turban" caption={
+        <section className="container mb-24 mx-auto -mt-16 md:-mt-24 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-10">
+            <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png"  alt="Groom portrait in cream sherwani with turban" caption={
               <>
-                <div className="font-display text-xl text-foreground">Talha</div>
-                <div className="text-sm text-muted-foreground">S/O</div>
-                <div className="text-sm text-muted-foreground">Software Developer, B.Tech</div>
+                <div className="font-display text-2xl md:text-2xl text-foreground">Syed Mohammed Talha</div>
+                <div className=" text-sm text-muted-foreground">Software Developer, B.Tech</div>
+                <div className="text-sm text-muted-foreground">S/O Syed Mushtaq</div>
               </>
             } />
-            <Framed src={bouquet} alt="White roses and blush buds bouquet" caption={
+            <Framed  src={bouquet} alt="White roses and blush buds bouquet"  />
+            <Framed src={prayerMat} alt="Beautiful prayer mat with 'Ariba' written on it and flowers" caption={
               <>
-                <div className="font-display text-xl text-foreground">Ariba</div>
-                <div className="text-sm text-muted-foreground">D/O</div>
+                <div className=" font-display text-2xl md:text-2xl text-foreground">Syeda Ariba</div>
                 <div className="text-sm text-muted-foreground">Aalima</div>
+                <div className="text-sm text-muted-foreground">D/O Syed Mohammad</div>
               </>
             } />
-            <Framed src={prayerMat} alt="Beautiful prayer mat with 'Ariba' written on it and flowers" />
           </div>
         </section>
 
         {/* Countdown Section - 36 days from now */}
-        <Countdown daysFromNow={36} />
+        <Countdown/>
 
         {/* Nikah Section */}
         <NikahSection />
+        <WalimaSection/>
 
+        <MapSection />
         {/* Hadith Section */}
         <HadithSection />
 
@@ -234,7 +331,6 @@ const Index = () => {
         <DuaSection />
 
         {/* Map Section */}
-        <MapSection />
 
         {/* Ending Section */}
         <EndingSection />

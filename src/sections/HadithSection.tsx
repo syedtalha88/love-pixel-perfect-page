@@ -41,7 +41,7 @@ const HadithSection = () => {
                     “Marriage is my Sunnah; whoever turns away from it is not of me.”
                   </p>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    A timeless Prophetic teaching encouraging the blessing and responsibility of marriage.
+                    Our beloved Prophet ﷺ, teaching encouraging the blessing and responsibility of marriage.
                   </p>
                 </div>
               </div>
@@ -52,8 +52,7 @@ const HadithSection = () => {
                 <Quote className="text-accent-foreground/70 shrink-0" />
                 <div>
                   <p className="text-lg leading-relaxed text-foreground font-medium">
-                    “And of His signs is that He created for you from yourselves mates that you may find
-                    tranquility in them; and He placed between you affection and mercy.”
+                    “And of His signs is that He created for you spouses from among yourselves so that you may find comfort in them; and He placed between you affection and mercy.”
                   </p>
                   <p className="mt-2 text-sm text-muted-foreground">Surah Ar-Rum 30:21</p>
                 </div>

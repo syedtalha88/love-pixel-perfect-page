@@ -1,17 +1,21 @@
-import Map from '@/components/Map';
-
 const MapSection = () => {
-  // Update these details as needed
-  const venueName = '[Venue name]';
-  const address = '[Full address, City]';
-  const description = 'Parking available, close to [Landmark].';
-  // Default center (example coords) — replace with actual venue coordinates
-  const center: [number, number] = [72.8777, 19.076];
+  const venueName = "Haji Ali Function Hall";
+  const address = "Roshan Gate, Aurangabad";
+  const description = "Parking available, near Haji ali Hall";
+
+  const plusCode = "V8PW+W7 Chhatrapati Sambhajinagar, Maharashtra";
 
   return (
-    <section id="map" aria-labelledby="map-title" className="container mx-auto py-16 md:py-24">
+    <section
+      id="map"
+      aria-labelledby="map-title"
+      className="container mx-auto py-16 md:py-24"
+    >
       <div className="text-center animate-fade-in">
-        <h2 id="map-title" className="font-amiri text-4xl md:text-5xl text-accent-foreground tracking-wide">
+        <h2
+          id="map-title"
+          className="font-amiri text-4xl md:text-5xl text-accent-foreground tracking-wide"
+        >
           Venue Location
         </h2>
         <div className="mt-6 flex items-center justify-center gap-3 text-accent-foreground/70">
@@ -22,25 +26,31 @@ const MapSection = () => {
       </div>
 
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+        {/* Venue Details */}
         <div className="order-2 md:order-1 bg-card/80 backdrop-blur-sm border border-accent/30 rounded-lg shadow-md p-6 animate-fade-in">
-          <h3 className="sr-only">Venue Details</h3>
           <dl className="space-y-3">
             <div>
-              <dt className="text-sm uppercase tracking-wide text-muted-foreground">Venue</dt>
+              <dt className="text-sm uppercase tracking-wide text-muted-foreground">
+                Venue
+              </dt>
               <dd className="text-foreground font-medium">{venueName}</dd>
             </div>
             <div>
-              <dt className="text-sm uppercase tracking-wide text-muted-foreground">Address</dt>
+              <dt className="text-sm uppercase tracking-wide text-muted-foreground">
+                Address
+              </dt>
               <dd className="text-foreground font-medium">{address}</dd>
             </div>
             <div>
-              <dt className="text-sm uppercase tracking-wide text-muted-foreground">Notes</dt>
+              <dt className="text-sm uppercase tracking-wide text-muted-foreground">
+                Notes
+              </dt>
               <dd className="text-muted-foreground">{description}</dd>
             </div>
           </dl>
           <div className="mt-4 flex gap-3">
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${center[1]},${center[0]}`}
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(plusCode)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="underline story-link text-accent-foreground"
@@ -50,9 +60,19 @@ const MapSection = () => {
           </div>
         </div>
 
+        {/* Embedded Map */}
         <div className="order-1 md:order-2 animate-fade-in">
           <div className="p-2 bg-card border rounded-lg shadow-lg">
-            <Map center={center} zoom={12} className="rounded-md" />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d445.78024074914714!2d75.34542892941192!3d19.88720747727635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba2a173213e65%3A0xd89b51d1db2dae4d!2sHaji%20Ali%20Function%20Hall!5e1!3m2!1sen!2sin!4v1754749046946!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-md"
+            ></iframe>
           </div>
         </div>
       </div>
