@@ -4,6 +4,8 @@ import heroBg from "@/assets/hero-floral-bg.jpg";
 import Haji from "@/assets/HajiAli.jpg";
 import Masjid from "@/assets/jama_masjid.png";
 import bouquet from "@/assets/bouquet.jpg";
+import Groom from "@/assets/groom.jpg";
+
 import prayerMat from "@/assets/mat2.png";
 import HadithSection from "@/sections/HadithSection";
 import DuaSection from "@/sections/DuaSection";
@@ -298,7 +300,7 @@ const Index = () => {
 
         <section className="container mb-24 mx-auto -mt-16 md:-mt-24 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-10">
-            <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png"  alt="Groom portrait in cream sherwani with turban" caption={
+            <Framed src={Groom}  alt="Groom portrait in cream sherwani with turban" caption={
               <>
                 <div className="font-display text-2xl md:text-2xl text-foreground">Syed Mohammed Talha</div>
                 <div className=" text-sm text-muted-foreground">Software Developer, B.Tech</div>
