@@ -3,6 +3,10 @@ import { Heart } from "lucide-react";
 import heroBg from "@/assets/hero-floral-bg.jpg";
 import bouquet from "@/assets/bouquet.jpg";
 import prayerMat from "@/assets/prayer-mat-ariba.jpg";
+import HadithSection from "@/sections/HadithSection";
+import DuaSection from "@/sections/DuaSection";
+import MapSection from "@/sections/MapSection";
+import EndingSection from "@/sections/EndingSection";
 
 const Nav = () => (
   <header className="sticky top-0 z-40 border-b bg-background/30 backdrop-blur-md supports-[backdrop-filter]:bg-background/30">
@@ -222,6 +226,18 @@ const Index = () => {
 
         {/* Nikah Section */}
         <NikahSection />
+
+        {/* Hadith Section */}
+        <HadithSection />
+
+        {/* Dua Section */}
+        <DuaSection />
+
+        {/* Map Section */}
+        <MapSection />
+
+        {/* Ending Section */}
+        <EndingSection />
       </main>
     </>
   );
