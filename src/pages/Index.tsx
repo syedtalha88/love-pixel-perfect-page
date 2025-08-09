@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Heart } from "lucide-react";
 import heroBg from "@/assets/hero-floral-bg.jpg";
 import bouquet from "@/assets/bouquet.jpg";
@@ -25,7 +25,7 @@ const Nav = () => (
   </header>
 );
 
-const Framed = ({ src, alt }: { src: string; alt: string }) => (
+const Framed = ({ src, alt, caption }: { src: string; alt: string; caption?: ReactNode }) => (
   <figure className="bg-card border shadow-lg rounded-md p-2 sm:p-3 md:p-4">
     <img
       src={src}
@@ -33,6 +33,7 @@ const Framed = ({ src, alt }: { src: string; alt: string }) => (
       loading="lazy"
       className="rounded-sm object-cover w-full h-full"
     />
+    {caption && <figcaption className="mt-2 text-center space-y-1">{caption}</figcaption>}
   </figure>
 );
 
@@ -132,14 +133,23 @@ const Index = () => {
 
         <section className="container mx-auto -mt-16 md:-mt-24 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png" alt="Groom portrait in cream sherwani with turban" />
-            <Framed src={bouquet} alt="White roses and blush buds bouquet" />
+            <Framed src="/lovable-uploads/e35634f9-05a8-45c1-b5eb-179f3943e0eb.png" alt="Groom portrait in cream sherwani with turban" caption={
+              <>
+                <div className="font-display text-xl text-foreground">Talha</div>
+                <div className="text-sm text-muted-foreground">S/O</div>
+                <div className="text-sm text-muted-foreground">Software Developer, B.Tech</div>
+              </>
+            } />
+            <Framed src={bouquet} alt="White roses and blush buds bouquet" caption={
+              <>
+                <div className="font-display text-xl text-foreground">Ariba</div>
+                <div className="text-sm text-muted-foreground">D/O</div>
+                <div className="text-sm text-muted-foreground">Aalima</div>
+              </>
+            } />
             <Framed src={prayerMat} alt="Beautiful prayer mat with 'Ariba' written on it and flowers" />
           </div>
         </section>
-
-        {/* Names Section */}
-        <NamesSection />
 
         {/* Countdown Section - 36 days from now */}
         <Countdown daysFromNow={36} />
