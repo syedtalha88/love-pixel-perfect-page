@@ -179,7 +179,7 @@ const NikahSection = () => {
               </div>
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground">Date & Time</dt>
-                <dd className="text-foreground font-medium">[Date], [Time]</dd>
+                <dd className="text-foreground font-medium">15 Sep, After Asr</dd>
               </div>
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground"></dt>
@@ -242,7 +242,7 @@ const WalimaSection = () => {
               </div>
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground">Date & Time</dt>
-                <dd className="text-foreground font-medium">[Date], [Time]</dd>
+                <dd className="text-foreground font-medium">16 Sep, After Magrib</dd>
               </div>
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground"></dt>
