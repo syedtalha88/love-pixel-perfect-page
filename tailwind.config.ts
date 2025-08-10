@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -63,6 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			animationDelay: {
+				0: '0s',
+			    200: '0.2s',
+    			400: '0.4s',
+  			},
 				fontFamily: {
 					display: ['"Great Vibes"', 'cursive'],
 					sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
@@ -82,6 +88,11 @@ export default {
 							height: 'var(--radix-accordion-content-height)'
 						}
 					},
+					pulseScale: {
+  						"0%, 100%": { transform: "scale(1)" },   // Normal size
+  						"50%": { transform: "scale(1.16)" },     // Slightly bigger in middle
+					},
+
 					'accordion-up': {
 						from: {
 							height: 'var(--radix-accordion-content-height)'
@@ -104,9 +115,21 @@ export default {
 				animation: {
 					'accordion-down': 'accordion-down 0.2s ease-out',
 					'accordion-up': 'accordion-up 0.2s ease-out',
-					'fade-in': 'fade-in 0.3s ease-out'
+					'fade-in': 'fade-in 0.3s ease-out',
+      		  		'pulse-scale': 'pulseScale 3s ease-in-out infinite'
 				}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+plugins: [
+  tailwindcssAnimate,
+  function ({ addUtilities }) {
+    addUtilities({
+      '.delay-0': { animationDelay: '0s' },
+      '.delay-200': { animationDelay: '0.4s' },
+      '.delay-400': { animationDelay: '0.9s' },
+    });
+  },
+],
+
+	
 } satisfies Config;

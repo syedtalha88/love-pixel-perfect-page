@@ -282,7 +282,7 @@ const Index = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="bg-background/60">
+          <div className="bg-background/60 animate-fade-in">
             <div className="container mx-auto pt-10 pb-20 md:pb-28 text-center">
               
               <h2 className="font-display text-5xl md:text-7xl text-foreground">Bismillah</h2>
@@ -300,21 +300,33 @@ const Index = () => {
 
         <section className="container mb-24 mx-auto -mt-16 md:-mt-24 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-10">
+            <div className="animate-fade-in">
+              
             <Framed src={Groom}  alt="Groom portrait in cream sherwani with turban" caption={
+              <div className=" ">
+                <div className="animate-pulse-scale delay-0 font-display text-2xl md:text-2xl text-foreground ">Syed Mohammed Talha</div>
+                <div className=" text-sm text-muted-foreground animate-pulse-scale delay-200">Software Developer, B.Tech</div>
+                <div className="text-sm text-muted-foreground  animate-pulse-scale delay-400"><span className="font-bold text-muted-foreground">S/O : </span> Syed Mushtaq</div>
+              </div>
+            } />
+
+            </div>
+            <div>
+            <Framed  src={bouquet} alt="White roses and blush buds bouquet" caption={
               <>
-                <div className="font-display text-2xl md:text-2xl text-foreground">Syed Mohammed Talha</div>
-                <div className=" text-sm text-muted-foreground">Software Developer, B.Tech</div>
-                <div className="text-sm text-muted-foreground">S/O Syed Mushtaq</div>
+                 <div className=" delay-0 font-display text-4xl md:text-4xl text-foreground ">WEDS</div>
+              </>
+            }  />
+            </div>
+           <div>
+             <Framed src={prayerMat} alt="Beautiful prayer mat with 'Ariba' written on it and flowers" caption={
+              <>
+                <div className=" animate-pulse-scale delay-0 font-display text-2xl md:text-2xl text-foreground">Syeda Ariba</div>
+                <div className="text-sm text-muted-foreground animate-pulse-scale delay-200">Aalima</div>
+                <div className="text-sm text-muted-foreground  animate-pulse-scale delay-400"><span className="font-bold text-muted-foreground">D/O : </span>  Syed Mohammad</div>
               </>
             } />
-            <Framed  src={bouquet} alt="White roses and blush buds bouquet"  />
-            <Framed src={prayerMat} alt="Beautiful prayer mat with 'Ariba' written on it and flowers" caption={
-              <>
-                <div className=" font-display text-2xl md:text-2xl text-foreground">Syeda Ariba</div>
-                <div className="text-sm text-muted-foreground">Aalima</div>
-                <div className="text-sm text-muted-foreground">D/O Syed Mohammad</div>
-              </>
-            } />
+           </div>
           </div>
         </section>
 
