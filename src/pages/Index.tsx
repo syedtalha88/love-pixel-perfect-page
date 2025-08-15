@@ -184,7 +184,7 @@ const NikahSection = () => {
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground"></dt>
                 <dd className="text-muted-foreground">
-                 In shaa Allah, our Nikah will  take place at the historic Jama Masjid, Aurangabad — a blessed house of Allah, filled with barakah and the fragrance of faith.
+                 In shaa Allah,  Nikah will  take place at the historic Jama Masjid, Aurangabad — a blessed house of Allah, filled with barakah and the fragrance of faith.
                 </dd>
               </div>
               
@@ -247,7 +247,7 @@ const WalimaSection = () => {
               <div>
                 <dt className="text-sm uppercase tracking-wide text-muted-foreground"></dt>
                 <dd className="text-muted-foreground">
-                 "In shaa Allah, our Walima will be held at Haji Ali Function Hall — a beautiful Sunnah of our beloved Prophet ﷺ, gathering family and friends in joy, gratitude, and the blessings of Allah."
+                 "In shaa Allah,  Walima will be held at Haji Ali Function Hall — a beautiful Sunnah of our beloved Prophet ﷺ, gathering family and friends in joy, gratitude, and the blessings of Allah."
                 </dd>
               </div>
               
