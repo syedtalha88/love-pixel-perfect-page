@@ -292,7 +292,7 @@ const Index = () => {
                 Talha & Ariba
               </h2>
               <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-                We Are Getting Married On SEP 15, 2025
+                 Getting Married On SEP 15, 2025
               </p>
             </div>
           </div>
